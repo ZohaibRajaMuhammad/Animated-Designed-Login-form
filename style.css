@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .neon-border {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .neon-border::before {
+    content: '';
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: linear-gradient(360deg, red, yellow, lime, cyan, blue, magenta, red);
+    animation: neonRotate 4s linear infinite;
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  @keyframes neonRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .login-form {
+    position: relative;
+    width: 280px;
+    z-index: 1;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-form h2 {
+    color: white;
+    margin-bottom: 30px;
+  }
+  
+  .input-box {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .input-box input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+  .input-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    color: white;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #ff0047;
+    font-size: 14px;
+  }
+  
+  .btn {
+    background: linear-gradient(90deg, #ff0047, #ff8d1e, #ffd500);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(90deg, #ffd500, #ff8d1e, #ff0047);
+  }
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .links a:hover {
+    color: #ff0047;
+  }
+  
